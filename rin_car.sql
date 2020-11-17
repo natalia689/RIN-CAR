@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-11-2020 a las 21:24:29
+-- Tiempo de generación: 17-11-2020 a las 15:47:42
 -- Versión del servidor: 10.4.14-MariaDB
 -- Versión de PHP: 7.2.33
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `rin_car`
+-- Base de datos: `rin-car`
 --
 
 -- --------------------------------------------------------
@@ -45,6 +45,7 @@ CREATE TABLE `cita_revision` (
 CREATE TABLE `comentario_producto` (
   `comentario_productoID` int(100) NOT NULL,
   `fecha_comentario` datetime NOT NULL,
+  `comentario_producto` text NOT NULL,
   `id_usuario` int(100) NOT NULL,
   `id_producto` int(100) NOT NULL,
   `id_comentario` int(100) NOT NULL
@@ -61,6 +62,14 @@ CREATE TABLE `dia_contable` (
   `fecha_creacion` datetime NOT NULL,
   `total_ganancias` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `dia_contable`
+--
+
+INSERT INTO `dia_contable` (`dia_contableID`, `fecha_creacion`, `total_ganancias`) VALUES
+(1, '2020-11-16 08:57:58', 22455242),
+(2, '2020-11-15 08:57:58', 326515469);
 
 -- --------------------------------------------------------
 
@@ -116,13 +125,6 @@ CREATE TABLE `usuario` (
   `contrasenha_ingreso` varchar(100) NOT NULL,
   `rol` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `usuario`
---
-
-INSERT INTO `usuario` (`usuarioID`, `nombre_completo`, `direccion`, `telefono`, `email`, `estado`, `usuario_ingreso`, `contrasenha_ingreso`, `rol`) VALUES
-(1, 'Daniel A, Lopez Ch.', 'Calle 105', '35235235', 'etewtratr@ererwg.com', 'twt', 'Dani718', '7534ccPS', 'Cliente');
 
 --
 -- Índices para tablas volcadas
@@ -191,7 +193,7 @@ ALTER TABLE `comentario_producto`
 -- AUTO_INCREMENT de la tabla `dia_contable`
 --
 ALTER TABLE `dia_contable`
-  MODIFY `dia_contableID` int(100) NOT NULL AUTO_INCREMENT;
+  MODIFY `dia_contableID` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `orden_compra`
