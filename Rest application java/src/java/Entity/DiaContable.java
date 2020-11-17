@@ -19,7 +19,6 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -40,10 +39,8 @@ public class DiaContable implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 100)
     @Column(name = "dia_contableID")
-    private String diacontableID;
+    private Integer diacontableID;
     @Basic(optional = false)
     @NotNull
     @Column(name = "fecha_creacion")
@@ -57,21 +54,21 @@ public class DiaContable implements Serializable {
     public DiaContable() {
     }
 
-    public DiaContable(String diacontableID) {
+    public DiaContable(Integer diacontableID) {
         this.diacontableID = diacontableID;
     }
 
-    public DiaContable(String diacontableID, Date fechaCreacion, double totalGanancias) {
+    public DiaContable(Integer diacontableID, Date fechaCreacion, double totalGanancias) {
         this.diacontableID = diacontableID;
         this.fechaCreacion = fechaCreacion;
         this.totalGanancias = totalGanancias;
     }
 
-    public String getDiacontableID() {
+    public Integer getDiacontableID() {
         return diacontableID;
     }
 
-    public void setDiacontableID(String diacontableID) {
+    public void setDiacontableID(Integer diacontableID) {
         this.diacontableID = diacontableID;
     }
 

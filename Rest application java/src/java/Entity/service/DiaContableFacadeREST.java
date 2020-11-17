@@ -45,20 +45,20 @@ public class DiaContableFacadeREST extends AbstractFacade<DiaContable> {
     @PUT
     @Path("{id}")
     @Consumes({MediaType.APPLICATION_JSON})
-    public void edit(@PathParam("id") String id, DiaContable entity) {
+    public void edit(@PathParam("id") Integer id, DiaContable entity) {
         super.edit(entity);
     }
 
     @DELETE
     @Path("{id}")
-    public void remove(@PathParam("id") String id) {
+    public void remove(@PathParam("id") Integer id) {
         super.remove(super.find(id));
     }
 
     @GET
     @Path("{id}")
     @Produces({MediaType.APPLICATION_JSON})
-    public DiaContable find(@PathParam("id") String id) {
+    public DiaContable find(@PathParam("id") Integer id) {
         return super.find(id);
     }
 
