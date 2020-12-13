@@ -1,0 +1,26 @@
+#medio {
+    margin-top: 10%;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.829);
+    
+}
+#login{
+    text-align: center;
+}
+#usuariocss{
+    color: black;
+    font-size: large;
+    margin-top: 20px;
+    margin-left: 5px;
+}
+#passwordcss{
+    color: black;
+    font-size: large;
+    margin-top: 20px;
+}
+#botonIngLog{
+    margin-top: 5%;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+}

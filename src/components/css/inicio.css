@@ -1,0 +1,15 @@
+#btning{
+ margin-left: 40rem;
+}
+.nombreapp{
+    font-family: sans-serif;
+    color: white;
+    margin: 20px;
+    font-size: large
+}
+#btning:hover{
+    background: orange;
+}
+#btnlc{
+    margin-left: 50px;
+}
